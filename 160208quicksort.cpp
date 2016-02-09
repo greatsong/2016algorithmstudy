@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h> //ctime -> time.h로 수정
-#include <algorithm>
-//이 부분은 어떻게 처리해야 하나?
+#include <algorithm> //xcode에서 실행할 경우 확장자를 cpp로 할 것
 
 int n, S[1000000];
 
@@ -19,10 +18,11 @@ int main(){
     scanf("%d",&n);
     for(int i=0;i<n;i++)
         S[i]=rand();
-    print_array();
+    //print_array();
     int start = clock();
+    //standard 라이브러리 사용, 퀵 정렬
     std::sort(S,S+n);
     printf("result=%.3lf(sec)\n",(double)(clock()-start)/CLOCKS_PER_SEC);
-    print_array();
+    //print_array();
     return 0;
 }
